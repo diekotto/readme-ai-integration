@@ -16,4 +16,4 @@ readmeai \
     --temperature "${TEMPERATURE}" \
     --tree-depth "${TREE_DEPTH}" \
     --image "${LOGO_IMAGE}" \
-    --emojis
+    ${USE_EMOJIS:+"--emojis"}
