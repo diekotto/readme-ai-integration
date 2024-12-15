@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "additions": 1,
+    "author": {
+      "login": "diekotto"
+    },
+    "body": "",
+    "changedFiles": 1,
+    "createdAt": "2024-12-15T10:20:47Z",
+    "deletions": 1,
+    "title": "Fix emojis with ternary operator to not appear when its value is False"
+  },
+  "diff": "diff --git a/example.sh b/example.sh\nindex 193185d..8152f23 100644\n--- a/example.sh\n+++ b/example.sh\n@@ -16,4 +16,4 @@ readmeai \\\n     --temperature \"${TEMPERATURE}\" \\\n     --tree-depth \"${TREE_DEPTH}\" \\\n     --image \"${LOGO_IMAGE}\" \\\n-    --emojis\n+    ${USE_EMOJIS:+\"--emojis\"}\n"
+}
