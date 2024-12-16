@@ -1,14 +1,9 @@
-<div align="center">
-<pre>
-██████ ██████ ████   ██      ████   ████  ██  ██        ██  ██ ?????  ████         ██       ██   ██████  ████  ██████   ██   ██████  ████  ██████ ██  ██ 
-██  ██ ██     ██  ██ ██     ██  ██ ██     ██ ██         ██ ██  ????? ██            ██      ████  ██   █ ██  ██ ██  ██  ████    ██   ██  ██ ██  ██  ████  
-██████ ████   ██  ██ ██     ██  ██ ██     ████   ██████ ████   ?????  ████  ██████ ██     ██  ██ ██████ ██  ██ ██████ ██  ██   ██   ██  ██ ██████   ██   
-██ ██  ██     ██  ██ ██     ██  ██ ██     ██ ██         ██ ██  ?????     ██        ██     ██████ ██   █ ██  ██ ██ ██  ██████   ██   ██  ██ ██ ██    ██   
-██  ██ ██████ ████   ██████  ████   ████  ██  ██        ██  ██ ????? █████         ██████ ██  ██ ██████  ████  ██  ██ ██  ██   ██    ████  ██  ██   ██   
-</pre>
-</div>
 <p align="center">
-	<em>Unlocking distributed coordination, one lock at a time.</em>
+    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" align="center" width="30%">
+</p>
+<p align="center"><h1 align="center">REDLOCK-K8S-LABORATORY</h1></p>
+<p align="center">
+	<em>Orchestrating distributed locks, reliably and efficiently.</em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/diekotto/redlock-k8s-laboratory?style=flat&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
@@ -47,7 +42,7 @@
 
 ## 📍 Overview
 
-The redlock-k8s-laboratory project showcases a scalable, microservices-based architecture for processing tasks using distributed locking. It ensures exclusive access to shared resources, preventing conflicts in multi-instance environments. Built with Node.js, Redis, and Kubernetes, the project offers a robust solution for developers looking to build reliable, high-performance systems.
+redlock-k8s-laboratory showcases a scalable microservices architecture using Kubernetes, Redis, and Node.js. It demonstrates distributed locking and task scheduling, enabling efficient processing of concurrent jobs. The project provides a foundation for building robust, fault-tolerant systems that can handle high-volume workloads. Ideal for developers and DevOps professionals seeking best practices for containerized application design.
 
 ---
 
@@ -55,13 +50,14 @@ The redlock-k8s-laboratory project showcases a scalable, microservices-based arc
 
 |      | Feature         | Summary       |
 | :--- | :---:           | :---          |
-| ⚙️  | **Architecture**  | <ul><li>Microservices architecture with `web-server`, `cron-service`, and `Redis` components</li><li>Containerization using `Docker` for encapsulation and portability ([Dockerfiles](web-server/Dockerfile))</li><li>Orchestration using `Kubernetes` for deployment and scaling ([deployment YAMLs](deployment-web-server.k8s.yaml))</li></ul> |
-| 🔩 | **Code Quality**  | <ul><li>Modular and organized codebase with separate directories for each component</li><li>Consistent coding style and naming conventions</li><li>Use of modern JavaScript features and best practices ([main.js](web-server/main.js))</li></ul> |
-| 📄 | **Documentation** | <ul><li>Detailed `README.md` file providing an overview and setup instructions</li><li>Inline comments explaining key functionality and logic</li><li>Descriptive naming of files, variables, and functions for clarity</li></ul> |
-| 🔌 | **Integrations**  | <ul><li>Integration with `Redis` for caching and persistence ([deployment-redis.k8s.yaml](deployment-redis.k8s.yaml))</li><li>HTTP communication between `web-server` and `cron-service` ([main.js](cron-service/main.js))</li><li>Utilization of third-party libraries like `Express`, `ioredis`, and `cron` ([package.json](web-server/package.json))</li></ul> |
-| 🧩 | **Modularity**    | <ul><li>Separation of concerns into distinct components (`web-server`, `cron-service`, `Redis`)</li><li>Loose coupling between components, enabling independent development and deployment</li><li>Reusable and maintainable code modules ([main.js](web-server/main.js))</li></ul> |
-| 🧪 | **Testing**       | <ul><li>Lack of comprehensive test suite (unit tests, integration tests)</li><li>Opportunity to improve test coverage and ensure code reliability</li></ul> |
-| ⚡️  | **Performance**   | <ul><li>Utilization of `Redis` for fast in-memory caching and data storage</li><li>Horizontal scaling of `web-server` and `cron-service` using Kubernetes ([deployment YAMLs](deployment-web-server.k8s.yaml))</li><li>Efficient handling of concurrent requests and scheduled tasks</li></ul> |
+| ⚙️  | **Architecture**  | <ul><li>Microservices architecture with `web-server`, `cron-service`, and `Redis` components</li><li>Containerization using `Docker` for consistent runtime environments</li><li>Orchestration and deployment using `Kubernetes` for scalability and reliability</li></ul> |
+| 🔩 | **Code Quality**  | <ul><li>Modular and organized codebase structure</li><li>Use of popular and well-maintained libraries and frameworks (`Express`, `ioredis`, `cron`)</li><li>Consistent coding style and naming conventions</li></ul> |
+| 📄 | **Documentation** | <ul><li>Comprehensive `README.md` file providing project overview and setup instructions</li><li>Well-commented code explaining key functionalities and logic</li><li>Clear and concise `Dockerfile` and `package.json` files for each component</li></ul> |
+| 🔌 | **Integrations**  | <ul><li>Integration with `Redis` for distributed locking and data persistence</li><li>Communication between `web-server` and `cron-service` components</li><li>Seamless local development and testing using `Minikube`'s Docker daemon</li></ul> |
+| 🧩 | **Modularity**    | <ul><li>Separation of concerns between `web-server`, `cron-service`, and `Redis` components</li><li>Reusable and maintainable code modules (`main.js`, `Dockerfile`, `package.json`)</li><li>Loose coupling between components through well-defined interfaces and communication channels</li></ul> |
+| 🧪 | **Testing**       | <ul><li>Automated build and deployment processes using `Docker Compose` and `Kubernetes`</li><li>Real-time monitoring and logging of `web-server` and `Redis` components</li><li>Streamlined development workflow with `Minikube` integration for local testing</li></ul> |
+| ⚡️  | **Performance**   | <ul><li>Efficient handling of HTTP requests and message processing in the `web-server`</li><li>Optimized task execution and retry logic in the `cron-service`</li><li>Utilization of `Redis` for fast in-memory data storage and retrieval</li></ul> |
+| 🛡️ | **Security**      | <ul><li>Containerization provides isolation and security between components</li><li>Secure communication between components using environment variables for configuration</li><li>Potential for implementing authentication and authorization mechanisms</li></ul> |
 
 ---
 
@@ -108,7 +104,7 @@ The redlock-k8s-laboratory project showcases a scalable, microservices-based arc
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/diekotto/redlock-k8s-laboratory/blob/master/deployment-web-server.k8s.yaml'>deployment-web-server.k8s.yaml</a></b></td>
-				<td>- Defines a Kubernetes deployment and service for the web server component<br>- The deployment manages a single replica of the web server container, specifying the container image and port<br>- The service exposes the web server externally, allowing access via port 80<br>- Together, they enable the web server to be deployed and accessed within the Kubernetes cluster.</td>
+				<td>- Defines a Kubernetes deployment and service for the web server component<br>- The deployment manages a single replica of the web server container, specifying the container image and port<br>- The service exposes the web server externally, routing traffic to the appropriate pod<br>- Together, they enable reliable deployment and access to the web server within the Kubernetes cluster architecture.</td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/diekotto/redlock-k8s-laboratory/blob/master/docker-compose.yml'>docker-compose.yml</a></b></td>
@@ -120,7 +116,7 @@ The redlock-k8s-laboratory project showcases a scalable, microservices-based arc
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/diekotto/redlock-k8s-laboratory/blob/master/package.json'>package.json</a></b></td>
-				<td>- Configures the project's build, deployment, and logging processes<br>- Defines scripts for starting the application locally using Docker Compose and deploying to a Kubernetes cluster<br>- Provides commands for viewing logs of the web server and Redis components<br>- Specifies project metadata, including name, version, repository, author, and license.</td>
+				<td>- Configures the project's build, deployment, and logging processes<br>- Defines scripts for starting the application, building Docker images, and managing containers using Docker Compose<br>- Includes commands for deploying and removing Kubernetes resources<br>- Provides convenient scripts for accessing logs of the web server and Redis components, streamlining development and troubleshooting tasks.</td>
 			</tr>
 			</table>
 		</blockquote>
@@ -135,11 +131,11 @@ The redlock-k8s-laboratory project showcases a scalable, microservices-based arc
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/diekotto/redlock-k8s-laboratory/blob/master/web-server/package.json'>package.json</a></b></td>
-				<td>- Manages dependencies and metadata for the web server component of the project<br>- Specifies the required third-party libraries, including Express for handling HTTP requests, body-parser for parsing request bodies, and Luxon for date and time manipulation<br>- Defines the entry point of the web server and sets the software license to MIT.</td>
+				<td>- Manages dependencies and metadata for the web server component of the project<br>- Specifies the required third-party libraries, including Express for handling HTTP requests, body-parser for parsing request bodies, and Luxon for date and time manipulation<br>- Defines the entry point of the web server and sets the license under which the package is distributed.</td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/diekotto/redlock-k8s-laboratory/blob/master/web-server/main.js'>main.js</a></b></td>
-				<td>- Serves as the main entry point for the web server, handling HTTP requests and managing application state<br>- Exposes endpoints for receiving and processing messages, tracking data in memory based on message content<br>- Facilitates communication between components and provides a centralized location for monitoring and controlling the application's behavior.</td>
+				<td>- Serves as the main entry point for the web server, handling HTTP requests and managing application state<br>- Exposes endpoints for receiving and processing messages, tracking data in memory based on message content<br>- Facilitates communication between system components and provides a centralized location for monitoring and controlling the application's behavior.</td>
 			</tr>
 			</table>
 		</blockquote>
@@ -158,7 +154,7 @@ The redlock-k8s-laboratory project showcases a scalable, microservices-based arc
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/diekotto/redlock-k8s-laboratory/blob/master/commands/log-web.sh'>log-web.sh</a></b></td>
-				<td>- Enables viewing real-time logs from the web pod in a Kubernetes cluster<br>- Retrieves the pod name by filtering the output of the `kubectl get pods` command, and then streams the logs using `kubectl logs -f`<br>- Facilitates monitoring and debugging of the web component within the project's containerized environment.</td>
+				<td>- Enables viewing real-time logs for the web component in a Kubernetes cluster<br>- Retrieves the pod name associated with the web service using kubectl and the grep command<br>- Utilizes the kubectl logs command with the -f flag to stream the logs of the identified web pod, facilitating continuous monitoring and troubleshooting of the web component within the project's architecture.</td>
 			</tr>
 			</table>
 		</blockquote>
@@ -169,7 +165,7 @@ The redlock-k8s-laboratory project showcases a scalable, microservices-based arc
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/diekotto/redlock-k8s-laboratory/blob/master/cron-service/Dockerfile'>Dockerfile</a></b></td>
-				<td>- Dockerfile sets up the cron-service container environment, installing dependencies and copying the main script<br>- It enables the cron-service to run independently, executing scheduled tasks within the containerized application<br>- The Dockerfile facilitates deployment and ensures the service has the necessary runtime and dependencies, contributing to the overall architecture's modularity and scalability.</td>
+				<td>- Dockerfile sets up the environment for running the cron-service, a component of the project's architecture<br>- It installs dependencies, copies the necessary files, and specifies the command to start the service<br>- The cron-service likely performs scheduled tasks or background jobs, contributing to the overall functionality and automation within the project.</td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/diekotto/redlock-k8s-laboratory/blob/master/cron-service/package.json'>package.json</a></b></td>
@@ -177,7 +173,7 @@ The redlock-k8s-laboratory project showcases a scalable, microservices-based arc
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/diekotto/redlock-k8s-laboratory/blob/master/cron-service/main.js'>main.js</a></b></td>
-				<td>- Serves as the main entry point for the cron-service, setting up a Redis client, Redlock instance, and a cron job<br>- Handles distributed locking to ensure exclusive access to shared resources<br>- Processes elements from a Redis list, making HTTP requests to the web-server with each element<br>- Cleans up the list when empty.</td>
+				<td>- Serves as the cron service for the project architecture, executing scheduled tasks at regular intervals<br>- Utilizes Redis for distributed locking and list management<br>- Communicates with the web server to send task-related messages<br>- Ensures tasks are processed efficiently and reliably by implementing retry logic and random sleep intervals between task executions.</td>
 			</tr>
 			</table>
 		</blockquote>
